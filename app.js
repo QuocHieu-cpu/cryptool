@@ -5,11 +5,11 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
-const cryptoEngine = require("../crypto_engine");
+const cryptoEngine = require("./crypto_engine");
 
 const app = express();
 const PORT = Number(process.env.PORT) || 5000;
-const FRONTEND_DIST = path.join(__dirname, "..", "frontend", "dist");
+const FRONTEND_DIST = path.join(__dirname, "frontend", "dist");
 const ENGINE_ALGORITHMS = [
   { id: "caesar", name: "Caesar", keyType: "number" },
   { id: "vigenere", name: "Vigenère", keyType: "text" },
