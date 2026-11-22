@@ -57,14 +57,14 @@ export default function Workspace({ algorithm }) {
   }
 
   return (
-  <main className="flex-1 overflow-y-auto p-6">
+  <main className="min-w-0 flex-1 overflow-y-auto p-3 md:p-6">
     <h2 className="mb-4 text-xl font-semibold">
       <span className="text-muted">Thuật toán: </span>
       <span className="font-mono text-primary">{current.name}</span>
     </h2>
     <div className="space-y-6">
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="card space-y-4 p-5">
+        <div className="card space-y-4 p-3 md:p-5">
           <ModeSelector value={mode} onChange={setMode} />
           <TextInput
             value={text}
@@ -92,7 +92,7 @@ export default function Workspace({ algorithm }) {
             {loading ? 'Đang xử lý...' : 'Thực thi'}
           </button>
         </div>
-        <div className="card p-5">
+        <div className="card p-3 md:p-5">
           <OutputBox value={result} />
           {note && <p className="mt-3 text-sm text-warning">{note}</p>}
         </div>
