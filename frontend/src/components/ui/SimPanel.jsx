@@ -248,23 +248,25 @@ export default function SimPanel({ steps, algorithm }) {
           )}
 
           {/* Bảng chữ cái */}
-          <div className="rounded-lg border border-border bg-bg p-4">
-            <div className="grid gap-1 font-mono text-xs" style={{ gridTemplateColumns: 'repeat(26, minmax(0, 1fr))' }}>
-              {LETTERS.map(l => (
-                <div key={l} className={`rounded-sm py-1.5 text-center transition ${
-                  l === step.input ? 'bg-primary font-bold text-bg' : 'text-muted'
-                }`}>{l}</div>
-              ))}
-            </div>
-            <p className="my-2 text-center text-xs text-primary">↓ dịch {shift} vị trí</p>
-            <div className="grid gap-1 font-mono text-xs" style={{ gridTemplateColumns: 'repeat(26, minmax(0, 1fr))' }}>
-              {LETTERS.map((_, i) => (
-                <div key={i} className={`rounded-sm py-1.5 text-center transition ${
-                  LETTERS[i] === step.input ? 'bg-success font-bold text-bg' : 'text-muted'
-                }`}>{LETTERS[mod(i + shift, 26)]}</div>
-              ))}
-            </div>
-          </div>
+          <div className="overflow-x-auto rounded-lg border border-border bg-bg p-4">
+  <div className="min-w-[560px]">
+    <div className="grid gap-1 font-mono text-xs" style={{ gridTemplateColumns: 'repeat(26, minmax(0, 1fr))' }}>
+      {LETTERS.map(l => (
+        <div key={l} className={`rounded-sm py-1.5 text-center transition ${
+          l === step.input ? 'bg-primary font-bold text-bg' : 'text-muted'
+        }`}>{l}</div>
+      ))}
+    </div>
+    <p className="my-2 text-center text-xs text-primary">↓ dịch {shift} vị trí</p>
+    <div className="grid gap-1 font-mono text-xs" style={{ gridTemplateColumns: 'repeat(26, minmax(0, 1fr))' }}>
+      {LETTERS.map((_, i) => (
+        <div key={i} className={`rounded-sm py-1.5 text-center transition ${
+          LETTERS[i] === step.input ? 'bg-success font-bold text-bg' : 'text-muted'
+        }`}>{LETTERS[mod(i + shift, 26)]}</div>
+      ))}
+    </div>
+  </div>
+</div>
 
           {/* Thống kê */}
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
