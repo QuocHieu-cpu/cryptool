@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div className="flex h-screen flex-col">
       <Header />
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden md:flex-row">
         <Sidebar selected={algorithm} onSelect={setAlgorithm} />
         <Workspace key={algorithm} algorithm={algorithm} />
       </div>
